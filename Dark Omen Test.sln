@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dark Omen Test.CSharp.Plugins", "Dark Omen Test.CSharp.Plugins.csproj", "{3092CC24-3586-8A3C-BD31-E2D47D32FDC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dark Omen Test.CSharp", "Dark Omen Test.CSharp.csproj", "{D17A36E2-821C-A841-061F-6ABF0D31CF65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dark Omen Test.CSharp.Editor", "Dark Omen Test.CSharp.Editor.csproj", "{CBA7F686-C8D6-7A15-1B5D-33E8F852FAAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3092CC24-3586-8A3C-BD31-E2D47D32FDC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3092CC24-3586-8A3C-BD31-E2D47D32FDC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3092CC24-3586-8A3C-BD31-E2D47D32FDC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3092CC24-3586-8A3C-BD31-E2D47D32FDC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17A36E2-821C-A841-061F-6ABF0D31CF65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17A36E2-821C-A841-061F-6ABF0D31CF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17A36E2-821C-A841-061F-6ABF0D31CF65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17A36E2-821C-A841-061F-6ABF0D31CF65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA7F686-C8D6-7A15-1B5D-33E8F852FAAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA7F686-C8D6-7A15-1B5D-33E8F852FAAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA7F686-C8D6-7A15-1B5D-33E8F852FAAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA7F686-C8D6-7A15-1B5D-33E8F852FAAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
