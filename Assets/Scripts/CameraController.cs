@@ -1,4 +1,101 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraController : MonoBehaviour
+{
+
+    public float speed;
+    public float zoomSpeed;
+    public float angleSpeed;
+
+    public bool inverseControls;
+
+    private Vector3 mouseClickPosition;
+
+
+    void Start()
+    {
+        speed = 160;
+        zoomSpeed = 120;
+        angleSpeed = 12;
+        inverseControls = false;
+    }
+
+    void Update()
+    {
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            float y = transform.position.y;
+            transform.position += transform.forward * speed * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, y, transform.position.z);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            float y = transform.position.y;
+            transform.position += -transform.forward * speed * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, y, transform.position.z);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            float y = transform.position.y;
+            transform.position += -transform.right * speed * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, y, transform.position.z);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            float y = transform.position.y;
+            transform.position += transform.right * speed * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, y, transform.position.z);
+        }
+
+        float mouseWheel = Input.GetAxis("Mouse ScrollWheel");
+        if (mouseWheel != 0)
+        {
+            if (mouseWheel < 0)
+            {
+                transform.position += Vector3.up * zoomSpeed * Time.deltaTime;
+            }
+            else
+            {
+                transform.position += -Vector3.up * zoomSpeed * Time.deltaTime;
+            }
+        }
+
+        if (Input.GetMouseButton(2))
+        {
+            if (Input.GetMouseButtonDown(2))
+            {
+                mouseClickPosition = Input.mousePosition;
+            }
+            else
+            {
+                float xDiff;
+                float yDiff;
+
+                if (inverseControls)
+                {
+                    xDiff = (mouseClickPosition.x - Input.mousePosition.x);
+                    yDiff = (mouseClickPosition.y - Input.mousePosition.y);
+                }
+                else
+                {
+                    xDiff = (Input.mousePosition.x - mouseClickPosition.x);
+                    yDiff = (Input.mousePosition.y - mouseClickPosition.y);
+                }
+
+                transform.Rotate(Vector3.up, xDiff * angleSpeed * Time.deltaTime, Space.World);
+                transform.Rotate(-Vector3.right, yDiff * angleSpeed * Time.deltaTime, Space.Self);
+
+                mouseClickPosition = Input.mousePosition;
+            }
+        }
+    }
+}
+/*
+using UnityEngine;
 using System.Collections;
 
 public class CameraController : MonoBehaviour {
@@ -95,3 +192,4 @@ public class CameraController : MonoBehaviour {
         transform.position -= Vector3.up * amount * zoomSpeed;
     }
 }
+*/

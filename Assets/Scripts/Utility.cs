@@ -14,6 +14,29 @@ public static class Utility
     public static Color cBlue = new Color(0.2f, 0.6f, 1f, 1f);
     public static Color cWhite = new Color(0.9f, 0.9f, 0.9f, 1f);
 
+    private static int m_frameCounter = 0;
+    private static float m_timeCounter = 0.0f;
+    private static float m_lastFramerate = 0.0f;
+    private static float m_refreshTime = 0.5f;
+
+
+    private static float CountFps()
+    {
+        if (m_timeCounter < m_refreshTime)
+        {
+            m_timeCounter += Time.deltaTime;
+            m_frameCounter++;
+        }
+        else
+        {
+            //This code will break if you set your m_refreshTime to 0, which would make no sense.
+            m_lastFramerate = (float)m_frameCounter / m_timeCounter;
+            m_frameCounter = 0;
+            m_timeCounter = 0.0f;
+        }
+        return m_lastFramerate;
+    }
+
 
     /// <summary>
     /// Returns a random float in range [-1, 1] with normal distribution

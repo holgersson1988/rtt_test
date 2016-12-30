@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/PlayGround.unity
+- path: Assets/Scenes/DarkOmenTest.unity
   isLoaded: 1
   isActive: 1
